@@ -1,0 +1,91 @@
+<!--pages/life/dianying/dianying.wxml-->
+<view class='headrswiper'>
+  <view class='hottitle'>
+    <view class='hottext'>
+      <text>热门影片</text>
+    </view>
+    <view class='lookall' bindtap='morefilms'>
+      <text decode="{{true}}">查看全部&nbsp;&nbsp;</text>
+      <image class="arrowimg" src='../../../images/life/arrow-right.png'></image>
+    </view>
+  </view>
+  <view class='swiper'>
+    <scroll-view scroll-x="true">
+    <view class='filmview' >
+     <view class='filminfo' wx:for="{{filmInfos}}" wx:key="id">
+        <view class='filmimg'>
+          <image style='height:100%;width:100%' src='{{item.imageSrc}}'></image>
+        </view>
+        <view class='filetitle' style='font-size:11pt'>
+          <text style='color:#e09015'>{{item.stars}}</text>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='tabar'>
+  <view class='tabaritem' data-id='all' bindtap='showselect'>
+    <view class='item1'>
+      <text>{{allitem}}</text>
+    </view>
+    <view class='item2'>
+      <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+    </view>
+  </view>
+  <view class='tabaritem' data-id='near' bindtap='showselect'>
+    <view class='item1'>
+      <text>{{nearitem}}</text>
+    </view>
+    <view class='item2'>
+      <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+    </view>
+  </view>
+  <view class='tabaritem' data-id='sort' bindtap='showselect'>
+    <view class='item1'>
+      <text>{{sortitem}}</text>
+    </view>
+    <view class='item2'>
+      <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+    </view>
+  </view>
+  <view class='tabaritem' data-id='condi' bindtap='showselect'>
+    <view class='item1'>
+      <text>{{condiitem}}</text>
+    </view>
+    <view class='item2'>
+      <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+    </view>
+  </view>
+</view>
+<block wx:if="{{isshow==true}}">
+  <view class='selectblock'>
+    <view class='selectinfo' style="margin-left:{{ulmargin}}px">
+      <ul class="ul">
+        <li class="li" style="margin-bottom:5px" wx:for="{{selectul}}" wx:key="sid" data-name="{{item.lstype}}" data-value="{{item.value}}" data-flag="{{item.flag}}" bindtap="changeinfo">{{item.lstype}}</li>
+      </ul>
+    </view>
+  </view>
+</block>
+<view class='infobody'>
+  <scroll-view scroll-y="true" style="height:500px;width:100%">
+    <view style='margin-left:5px'>
+      <view class='tips' style='margin-top:{{tipsmargin}}'>{{errortips}}</view>
+      <view class='shop' wx:for="{{cinemalist}}" wx:key="id">
+        <view class='shopinfo' style='margin:2px 0 0 3px'>
+          <view class='shopName infoitem'>
+           <view style='width:75%'><text>{{item.name}}</text></view>
+           <view style='width:25%'><text>{{item.distan}}</text></view>
+          </view>
+          <view class='shopAdr infoitem'>
+            <text>地址：{{item.alladr}}</text>
+          </view>
+          <view class='shopTel infoitem'>
+            <text>电话：{{item.tel}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

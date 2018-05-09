@@ -1,0 +1,74 @@
+<!--pages/life/jiudian/jiudian.wxml-->
+<!--输入框-->
+<view class='header'>
+  <view class="input">
+    <input bindinput="bindKeyInput" bindblur="bindinput" placeholder="输入酒店名" placeholder-style="font-size: 30rpx" value="{{inputName}}"></input>
+  </view>
+  <view class='tabar'>
+    <view class='tabaritem' data-id='all' bindtap='showselect'>
+      <view class='item1' style='width:75%'>
+        <text>{{allitem}}</text>
+      </view>
+      <view class='item2'style='width:25%;margin-left:-8px'>
+        <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+      </view>
+    </view>
+    <view class='tabaritem' data-id='near' bindtap='showselect'>
+      <view class='item1'>
+        <text>{{nearitem}}</text>
+      </view>
+      <view class='item2'>
+        <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+      </view>
+    </view>
+    <view class='tabaritem' data-id='sort' bindtap='showselect'>
+      <view class='item1'>
+        <text>{{sortitem}}</text>
+      </view>
+      <view class='item2'>
+        <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+      </view>
+    </view>
+    <view class='tabaritem' data-id='condi' bindtap='showselect'>
+      <view class='item1'>
+        <text>{{condiitem}}</text>
+      </view>
+      <view class='item2'>
+        <image style="width:30px;height:30px" src='../../../images/life/down2.png'></image>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{isshow==true}}">
+  <view class='selectblock'>
+    <view class='selectinfo' style="margin-left:{{ulmargin}}px">
+      <ul class="ul">
+        <li class="li" style="margin-bottom:5px" wx:for="{{selectul}}" wx:key="sid" data-name="{{item.lstype}}"data-value="{{item.value}}" data-flag="{{item.flag}}" bindtap="changeinfo">{{item.lstype}}</li>
+      </ul>
+    </view>
+    </view>
+  </block>
+</view>
+<view class='infobody'>
+  <scroll-view scroll-y="true" style="height:500px;width:100%">
+    <view style='margin-left:5px;padding-bottom:5px'>
+    <view class='tips' style='margin-top:{{tipsmargin}}'>{{errortips}}</view>
+      <view class='shop' wx:for="{{shoplist}}" wx:key="id">
+        <view class='shoplog' style='margin-top:2px'>
+          <image class='AD' mode='aspectFill' src='../../../images/life/shopAD.png'></image>
+        </view>
+        <view class='shopinfo' style='margin:2px 0 0 3px'>
+          <view class='shopName infoitem'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='shopAdr infoitem'>
+            <text>地址：{{item.halfadr}}</text>
+             <text decode="{{true}}">&nbsp;&nbsp;|距您{{item.distan}}</text>
+          </view>
+          <view class='shopTel infoitem'>
+            <text>电话：{{item.tel}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

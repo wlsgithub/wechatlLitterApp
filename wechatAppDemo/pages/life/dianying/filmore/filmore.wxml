@@ -1,0 +1,17 @@
+<!--pages/life/dianying/filmore/filmore.wxml-->
+ <view class='filmview' style='margin-top:10px' >
+     <view class='filminfo' wx:for="{{filmInfos}}" wx:key="id">
+        <view class='filmimg' style='width:25%;'>
+          <image style='height:100%;width:100%' src='{{item.imageSrc}}'></image>
+        </view>
+        <view class='filetitle' style='width:75%;margin-left:8px'>
+          <view class='filmNM' style='width:90%;height:35px;'> 
+            <text style='font-size:13pt'>{{item.name}}</text>
+            <text style='color:#e09015'>{{item.stars}}</text>
+          </view>
+          <view style='width:100%;height:30px'>{{item.ftype}}</view>
+          <view style='width:100%;height:30px'>{{item.factor}}</view>
+          <view style='width:100%;height:30px'>{{item.fdate}}</view>
+        </view>
+      </view>
+    </view>

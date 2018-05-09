@@ -1,0 +1,86 @@
+/* pages/life/life.wxss */
+page {
+  background-color: #F0F0F0;
+}
+.header {
+  height: 170px;
+  position: relative;
+  }
+  .icon-img{
+  width:120rpx;
+  height:120rpx;
+}
+.bodyicon{
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.bantxt{
+  display: block;
+  text-align: center;
+  font-size:28rpx
+}
+.banselect{
+  margin: 6px 12px
+}
+.tuiguang{
+  width: 100%;
+    margin-top:5px;
+   background-color: white;
+}
+.fenge{
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 1px #F0F0F0 solid
+}
+.shop{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.shoplog{
+  width: 25%;
+}
+.shopinfo{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.AD{
+  width:100%;
+  height: 100%;
+}
+.shopinfo{
+  font-size: 28rpx;
+  border-bottom: 1px #F0F0F0 solid;
+}
+.infoitem{
+  height: 32px;
+}
+.loct{
+  height: 30px;
+  display: flex;
+  font-size: 20rpx;
+  flex-direction:row;
+  justify-content: space-between
+}
+.cttq{
+  height: 30px;
+}
+.ctif{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+}
+.qhct{
+  width: 17%;
+  line-height:30px;
+  font-size: 13px
+}

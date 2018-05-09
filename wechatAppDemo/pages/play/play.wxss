@@ -1,0 +1,26 @@
+/* pages/play/play.wxss */
+.tabar{
+  margin: 6px 0;
+  height: 33px;
+  border-bottom: 1px #F0F0F0 solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+.tabaritem{
+  width: 25%;
+  height: 30px;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.item1{
+  width: 60%
+  }
+.item2{
+  width: 40%;
+  margin-left: -15px
+}

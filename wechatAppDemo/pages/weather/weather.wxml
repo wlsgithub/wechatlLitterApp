@@ -1,0 +1,118 @@
+<!-- weather.wxml -->
+<view class="container">
+  <!-- 城市信息 -->
+  <view class="city" bindtap='bindViewTap'>
+    <view class='wtCity'>
+      <text>{{basic.location}}</text>
+      <image src='../../images/curcity.png' style='width:16px;height:16px'></image>
+    </view>
+    <view class='wtDate'>
+      <text class="update">{{update.loc}}</text>
+    </view>
+  </view>
+  <!-- 天气信息 -->
+  <view class="weather">
+    <!-- //天气图标及信息 -->
+    <view class='wt'>
+      <view class='weatherL'>
+        <view class='wl1'>
+          <image class="TqLogo" src='{{TqLogo}}'></image>
+        </view>
+        <view class='wl2'>
+          <!-- //天气文字 -->
+          <text class='TqTxt'>{{daily.cond_txt_d}}</text>
+        </view>
+      </view>
+      <view class="weatherR">
+        <view class='wr1'>
+          <!-- //摄氏度 -->
+          <text class="temperature">{{daily.tmp_max}}℃~{{daily.tmp_min}}℃</text>
+        </view>
+        <view class='wr2'>
+          <text class="wind">{{daily.wind_dir}}{{daily.wind_sc}}级</text>
+        </view>
+      </view>
+    </view>
+    <view class='air' style="width: 40%;">
+       <text decode="{{true}}">空气&nbsp;&nbsp;&nbsp;</text> 
+      <text>{{airQullty}}</text>
+    </view>
+  </view>
+  <!-- 未来天气 -->
+  <view class='futher'>
+    <view class='daywt'wx:for="{{futherweather}}" wx:key="id">
+      <view class='daydate'>
+        <text >{{item.wdate}}</text>
+      </view>
+      <view class='daylog'>
+        <image style='width:24px;height:24px' src='{{item.wimg}}'></image>
+        <text>{{item.wtext}}</text>
+      </view>
+      <view class='daytemp'>
+        <text>{{item.wtemp}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 指数 -->
+  <view class="suggestion">
+    <text class="title">生活指数</text>
+    <view class='suggestall' style='border-bottom:1px #bbd solid'>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/comf.png"></image>
+          <text>舒适度指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[0].brf}}</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/drsg.png"></image>
+          <text>穿衣指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[1].brf}}</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/flu.png"></image>
+          <text>感冒指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[2].brf}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='suggestall'>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/sport.png"></image>
+          <text>运动指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[3].brf}}</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/trav.png"></image>
+          <text>旅游指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[4].brf}}</text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="list_l">
+          <image src="../../images/icon/uv.png"></image>
+          <text>紫外线指数</text>
+        </view>
+        <view class="list_r">
+          <text class="list_t">{{suggestion[5].brf}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
